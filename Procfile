@@ -1,1 +1,1 @@
-web: gunicorn apl_name : zombie8 --log-file -
+web: gunicorn apl_name : app --log-file -
