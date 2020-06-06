@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core import validators
 from users.models import User
 
 
@@ -21,29 +21,30 @@ class Item(models.Model):
     name = models.CharField(
         verbose_name='名前',
         max_length=200,
+        null=True,
     )
+
     age = models.IntegerField(
         verbose_name='年齢',
         validators=[validators.MinValueValidator(1)],
         blank=True,
         null=True,
     )
+
     sex = models.IntegerField(
         verbose_name='性別',
         choices=SEX_CHOICES,
         default=1
     )
+
     memo = models.TextField(
         verbose_name='備考',
         max_length=300,
         blank=True,
         null=True,
     )
-    created_at = models.DateTimeField(
-        verbose_name='登録日',
-        auto_now_add=True
-    )
 
+    
     # 以下、管理項目
 
     # 作成者(ユーザー)
@@ -88,11 +89,11 @@ class Item(models.Model):
         """
         リストボックスや管理画面での表示
         """
-        return self.sample_1
+        return self.name
 
     class Meta:
         """
         管理画面でのタイトル表示
         """
-        verbose_name = 'サンプル'
-        verbose_name_plural = 'サンプル'
+        verbose_name = 'アイテム'
+        verbose_name_plural = 'アイテム'
