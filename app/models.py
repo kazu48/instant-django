@@ -13,32 +13,32 @@ class Item(models.Model):
     """
 
     SEX_CHOICES = (
-        (1, '男性'),
-        (2, '女性'),
-        (3, 'その他'),
+        (1, 'MALE'),
+        (2, 'FEMALE'),
+        (3, 'OTHER'),
     )
 
     name = models.CharField(
-        verbose_name='名前',
+        verbose_name='NAME',
         max_length=200,
         null=True,
     )
 
     age = models.IntegerField(
-        verbose_name='年齢',
+        verbose_name='AGE',
         validators=[validators.MinValueValidator(1)],
         blank=True,
         null=True,
     )
 
     sex = models.IntegerField(
-        verbose_name='性別',
+        verbose_name='SEX',
         choices=SEX_CHOICES,
         default=1
     )
 
     memo = models.TextField(
-        verbose_name='備考',
+        verbose_name='MEMO',
         max_length=300,
         blank=True,
         null=True,
@@ -50,7 +50,7 @@ class Item(models.Model):
     # 作成者(ユーザー)
     created_by = models.ForeignKey(
         User,
-        verbose_name='作成者',
+        verbose_name='CREATER',
         blank=True,
         null=True,
         related_name='CreatedBy',
@@ -60,7 +60,7 @@ class Item(models.Model):
 
     # 作成時間
     created_at = models.DateTimeField(
-        verbose_name='作成時間',
+        verbose_name='CREATE TIME',
         blank=True,
         null=True,
         editable=False,
@@ -69,7 +69,7 @@ class Item(models.Model):
     # 更新者(ユーザー)
     updated_by = models.ForeignKey(
         User,
-        verbose_name='更新者',
+        verbose_name='UPDATER',
         blank=True,
         null=True,
         related_name='UpdatedBy',
@@ -79,7 +79,7 @@ class Item(models.Model):
 
     # 更新時間
     updated_at = models.DateTimeField(
-        verbose_name='更新時間',
+        verbose_name='UPDATE TIME',
         blank=True,
         null=True,
         editable=False,
