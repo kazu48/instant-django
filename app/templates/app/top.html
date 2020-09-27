@@ -18,22 +18,22 @@
 </head>
 
 <body>
-    <div class="top"></div>
-    <div class="container slide">
-        <div class="row">
-            <a class="inner btn btn-outline-dark float-right btn-lg" href="{% url 'index' %}">Hello World!</a>
+    <div class="flex-container">
+        <div class="top">
+            <div class="slide">
+                <a class="inner btn btn-outline-dark float-right btn-lg" href="{% url 'index' %}">Hello World!</a>
+            </div>
         </div>
     </div>
-    
     <div class="flex-container">
-        <nav role="navigation">
-            <h2>Navigation</h2>
+        <tab role="table">
+            <h2>Table of Contents</h2>
             <ul>
-                <li><a href="">nav list</a></li>
-                <li><a href="">nav list</a></li>
-                <li><a href="">nav list</a></li>
+                <li><a href="">Paper</a></li>
+                <li><a href="">Movie</a></li>
+                <li><a href="">Cat</a></li>
             </ul>
-        </nav>
+        </tab>
             
         <main role="main">
             <h1>Main Contents</h1>
@@ -43,7 +43,7 @@
         
         <aside role="complementary">
             <h2>Aside</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Up coming</p>
         </aside>
     <!-- /.flex-container --></div>
     
